@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightbulbPlayground", "LightbulbPlayground\LightbulbPlayground.csproj", "{6EEF7633-2E0B-4B0A-B3EE-725958B27762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoslynWorkshopAnalyzer", "RoslynWorkshopAnalyzer\RoslynWorkshopAnalyzer\RoslynWorkshopAnalyzer.csproj", "{2451F469-CC73-4FCE-A8DF-E990DC84F2CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoslynWorkshopAnalyzer.Test", "RoslynWorkshopAnalyzer\RoslynWorkshopAnalyzer.Test\RoslynWorkshopAnalyzer.Test.csproj", "{2F57E2C6-6DB7-443A-8569-F06B79C4C497}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoslynWorkshopAnalyzer.Vsix", "RoslynWorkshopAnalyzer\RoslynWorkshopAnalyzer.Vsix\RoslynWorkshopAnalyzer.Vsix.csproj", "{B1560485-0A96-48A4-897C-D8C39463DB6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EEF7633-2E0B-4B0A-B3EE-725958B27762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EEF7633-2E0B-4B0A-B3EE-725958B27762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EEF7633-2E0B-4B0A-B3EE-725958B27762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EEF7633-2E0B-4B0A-B3EE-725958B27762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2451F469-CC73-4FCE-A8DF-E990DC84F2CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2451F469-CC73-4FCE-A8DF-E990DC84F2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2451F469-CC73-4FCE-A8DF-E990DC84F2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2451F469-CC73-4FCE-A8DF-E990DC84F2CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F57E2C6-6DB7-443A-8569-F06B79C4C497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F57E2C6-6DB7-443A-8569-F06B79C4C497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F57E2C6-6DB7-443A-8569-F06B79C4C497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F57E2C6-6DB7-443A-8569-F06B79C4C497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1560485-0A96-48A4-897C-D8C39463DB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1560485-0A96-48A4-897C-D8C39463DB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1560485-0A96-48A4-897C-D8C39463DB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1560485-0A96-48A4-897C-D8C39463DB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
