@@ -1,15 +1,13 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestHelper;
-using RoslynWorkshopAnalyzer;
 using Xunit;
 
 namespace RoslynWorkshopAnalyzer.Test
 {
-    public class UnitTest : CodeFixVerifier
+    public class RoslynWorkshopTests : CodeFixVerifier
     {
         [Fact]
         public void DoesNotTriggerDiagnostic()
@@ -79,6 +77,57 @@ public abstract class SomeAbstractClass
             VerifyCSharpDiagnostic(source, expectedDiagnostic, expectedDiagnostic2);
         }
 
+        [Fact]
+        public void DoesFixPublicCtorToProtected()
+        {
+            var source = @"
+public abstract class SomeAbstractClass
+{
+    public SomeAbstractClass()
+    {
+    }
+}";
+
+            var expected = @"
+public abstract class SomeAbstractClass
+{
+    protected SomeAbstractClass()
+    {
+    }
+}";
+
+            VerifyCSharpFix(source, expected);
+        }
+
+        [Fact]
+        public void DoesFixManyCtorsToProtected()
+        {
+            var source = @"
+public abstract class SomeAbstractClass
+{
+    public SomeAbstractClass()
+    {
+    }
+
+    public SomeAbstractClass(int x)
+    {
+    }
+}";
+
+            var expected = @"
+public abstract class SomeAbstractClass
+{
+    protected SomeAbstractClass()
+    {
+    }
+
+    protected SomeAbstractClass(int x)
+    {
+    }
+}";
+
+            VerifyCSharpFix(source, expected);
+        }
 
         protected override CodeFixProvider GetCSharpCodeFixProvider()
         {

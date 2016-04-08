@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using Microsoft.CodeAnalysis;
@@ -26,22 +27,35 @@ namespace RoslynWorkshopAnalyzer
         public override void Initialize(AnalysisContext context)
         {
             //context.RegisterSyntaxNodeAction(AnalyzeClassDeclaration, SyntaxKind.ClassDeclaration);
-            context.RegisterSymbolAction(AnalyzeClassSymbol, SymbolKind.NamedType);
+            context.RegisterSyntaxNodeAction(AnalyzeClassDeclarationUsingCSharpSyntaxVisitor, SyntaxKind.ClassDeclaration);
+            //context.RegisterSymbolAction(AnalyzeClassSymbol, SymbolKind.NamedType);
         }
 
         private static void AnalyzeClassDeclaration(SyntaxNodeAnalysisContext context)
         {
-            var classDeclaration = (ClassDeclarationSyntax) context.Node;
+            var classDeclaration = (ClassDeclarationSyntax)context.Node;
 
             if (!HasAbstractModifier(classDeclaration.Modifiers))
             {
                 return;
             }
 
-            foreach(var publicCtor in classDeclaration.Members.OfType<ConstructorDeclarationSyntax>().Where(IsPublic))
+            foreach (var publicCtor in classDeclaration.Members.OfType<ConstructorDeclarationSyntax>().Where(IsPublic))
             {
                 context.ReportDiagnostic(Diagnostic.Create(Rule, publicCtor.GetLocation(),
                     classDeclaration.Identifier.ValueText));
+            }
+        }
+
+        private static void AnalyzeClassDeclarationUsingCSharpSyntaxVisitor(SyntaxNodeAnalysisContext context)
+        {
+            var className = ((ClassDeclarationSyntax) context.Node).Identifier.ValueText;
+            var walker = new AllPublicConstructorsInSyntaxElement();
+            walker.Visit(context.Node);
+
+            foreach (var publicCtor in walker.PubliConstructors)
+            {
+                context.ReportDiagnostic(Diagnostic.Create(Rule, publicCtor.GetLocation(), className));
             }
         }
 
@@ -74,5 +88,23 @@ namespace RoslynWorkshopAnalyzer
 
         private static bool HasAbstractModifier(SyntaxTokenList modifiers)
             => modifiers.Any(SyntaxKind.AbstractKeyword);
+
+        private class AllPublicConstructorsInSyntaxElement : CSharpSyntaxWalker
+        {
+            public IEnumerable<ConstructorDeclarationSyntax> PubliConstructors { get; private set; }
+
+            public AllPublicConstructorsInSyntaxElement()
+            {
+                PubliConstructors = Enumerable.Empty<ConstructorDeclarationSyntax>();
+            }   
+
+            public override void VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
+            {
+                if (IsPublic(node))
+                {
+                    PubliConstructors = PubliConstructors.Union(new[] {node});
+                }
+            }
+        }
     }
 }
