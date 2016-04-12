@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoslynWorkshopAnalyzer.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoslynWorkshopAnalyzer.Vsix", "RoslynWorkshopAnalyzer\RoslynWorkshopAnalyzer.Vsix\RoslynWorkshopAnalyzer.Vsix.csproj", "{B1560485-0A96-48A4-897C-D8C39463DB6F}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpCodeRefactoring", "FSharpCodeRefactoring\FSharpCodeRefactoring.fsproj", "{27E66A38-AFBF-469F-88EE-B81A40105216}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B1560485-0A96-48A4-897C-D8C39463DB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1560485-0A96-48A4-897C-D8C39463DB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1560485-0A96-48A4-897C-D8C39463DB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E66A38-AFBF-469F-88EE-B81A40105216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E66A38-AFBF-469F-88EE-B81A40105216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E66A38-AFBF-469F-88EE-B81A40105216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E66A38-AFBF-469F-88EE-B81A40105216}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

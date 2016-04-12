@@ -14,5 +14,6 @@
   <Assets>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="RoslynWorkshopAnalyzer" Path="|RoslynWorkshopAnalyzer|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="RoslynWorkshopAnalyzer" Path="|RoslynWorkshopAnalyzer|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="FSharpCodeRefactoring" Path="|FSharpCodeRefactoring|" />
   </Assets>
 </PackageManifest>

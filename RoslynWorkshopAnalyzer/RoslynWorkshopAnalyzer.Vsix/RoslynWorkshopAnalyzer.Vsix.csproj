@@ -47,11 +47,18 @@
     <StartArguments>/rootsuffix Roslyn</StartArguments>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\FSharpCodeRefactoring\FSharpCodeRefactoring.fsproj">
+      <Project>{27E66A38-AFBF-469F-88EE-B81A40105216}</Project>
+      <Name>FSharpCodeRefactoring</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
     <ProjectReference Include="..\RoslynWorkshopAnalyzer\RoslynWorkshopAnalyzer.csproj">
       <Project>{2451F469-CC73-4FCE-A8DF-E990DC84F2CA}</Project>
       <Name>RoslynWorkshopAnalyzer</Name>

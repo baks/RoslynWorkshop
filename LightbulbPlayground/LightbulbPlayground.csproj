@@ -67,7 +67,6 @@
     <Compile Include="SyntaxNodeExamples.cs" />
     <Compile Include="SyntaxTreeExamples.cs" />
     <Compile Include="SyntaxTriviaExamples.cs" />
-    <Compile Include="TestX.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

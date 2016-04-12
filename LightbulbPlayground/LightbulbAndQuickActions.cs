@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            var x = 5;
+            x = 5;
         }
     }
 }
